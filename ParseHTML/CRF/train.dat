@@ -1,0 +1,19 @@
+Iphone NN PDN
+6s NN PDN
+factory NN PDT
+unlocked VBD PDT
+... : O
+$ $ CC
+300 CD PR
+
+Apple NN BN
+Iphone NN PDN
+6s NN PDN
+white JJ PDT
+color NN PDT
+64 CD PDT
+GB NN PDT
+... : O
+. . O
+$ $ CC
+325 CD PR

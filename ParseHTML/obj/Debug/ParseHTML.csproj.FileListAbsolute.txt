@@ -1,0 +1,13 @@
+c:\users\admin\documents\visual studio 2015\Projects\ParseHTML\ParseHTML\bin\Debug\ParseHTML.exe.config
+C:\Users\Admin\documents\visual studio 2015\Projects\ParseHTML\ParseHTML\obj\Debug\ParseHTML.csprojResolveAssemblyReference.cache
+C:\Users\Admin\documents\visual studio 2015\Projects\ParseHTML\ParseHTML\bin\Debug\ParseHTML.exe
+C:\Users\Admin\documents\visual studio 2015\Projects\ParseHTML\ParseHTML\bin\Debug\ParseHTML.pdb
+C:\Users\Admin\documents\visual studio 2015\Projects\ParseHTML\ParseHTML\bin\Debug\Fizzler.dll
+C:\Users\Admin\documents\visual studio 2015\Projects\ParseHTML\ParseHTML\bin\Debug\Fizzler.Systems.HtmlAgilityPack.dll
+C:\Users\Admin\documents\visual studio 2015\Projects\ParseHTML\ParseHTML\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Admin\documents\visual studio 2015\Projects\ParseHTML\ParseHTML\bin\Debug\Fizzler.xml
+C:\Users\Admin\documents\visual studio 2015\Projects\ParseHTML\ParseHTML\bin\Debug\Fizzler.Systems.HtmlAgilityPack.xml
+C:\Users\Admin\documents\visual studio 2015\Projects\ParseHTML\ParseHTML\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\Admin\documents\visual studio 2015\Projects\ParseHTML\ParseHTML\bin\Debug\HtmlAgilityPack.xml
+C:\Users\Admin\documents\visual studio 2015\Projects\ParseHTML\ParseHTML\obj\Debug\ParseHTML.exe
+C:\Users\Admin\documents\visual studio 2015\Projects\ParseHTML\ParseHTML\obj\Debug\ParseHTML.pdb
