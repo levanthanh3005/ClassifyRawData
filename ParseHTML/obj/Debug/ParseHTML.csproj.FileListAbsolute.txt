@@ -11,3 +11,16 @@ C:\Users\Admin\documents\visual studio 2015\Projects\ParseHTML\ParseHTML\bin\Deb
 C:\Users\Admin\documents\visual studio 2015\Projects\ParseHTML\ParseHTML\bin\Debug\HtmlAgilityPack.xml
 C:\Users\Admin\documents\visual studio 2015\Projects\ParseHTML\ParseHTML\obj\Debug\ParseHTML.exe
 C:\Users\Admin\documents\visual studio 2015\Projects\ParseHTML\ParseHTML\obj\Debug\ParseHTML.pdb
+F:\HOC TAP\Work\ClassifyRawData\ParseHTML\bin\Debug\ParseHTML.exe.config
+F:\HOC TAP\Work\ClassifyRawData\ParseHTML\obj\Debug\ParseHTML.exe
+F:\HOC TAP\Work\ClassifyRawData\ParseHTML\obj\Debug\ParseHTML.pdb
+F:\HOC TAP\Work\ClassifyRawData\ParseHTML\bin\Debug\ParseHTML.exe
+F:\HOC TAP\Work\ClassifyRawData\ParseHTML\bin\Debug\ParseHTML.pdb
+F:\HOC TAP\Work\ClassifyRawData\ParseHTML\bin\Debug\Fizzler.dll
+F:\HOC TAP\Work\ClassifyRawData\ParseHTML\bin\Debug\Fizzler.Systems.HtmlAgilityPack.dll
+F:\HOC TAP\Work\ClassifyRawData\ParseHTML\bin\Debug\HtmlAgilityPack.dll
+F:\HOC TAP\Work\ClassifyRawData\ParseHTML\bin\Debug\Fizzler.xml
+F:\HOC TAP\Work\ClassifyRawData\ParseHTML\bin\Debug\Fizzler.Systems.HtmlAgilityPack.xml
+F:\HOC TAP\Work\ClassifyRawData\ParseHTML\bin\Debug\HtmlAgilityPack.pdb
+F:\HOC TAP\Work\ClassifyRawData\ParseHTML\bin\Debug\HtmlAgilityPack.xml
+F:\HOC TAP\Work\ClassifyRawData\ParseHTML\obj\Debug\ParseHTML.csprojResolveAssemblyReference.cache

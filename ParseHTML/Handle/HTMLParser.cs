@@ -59,11 +59,13 @@ class HTMLParser
 
         //Load web
         HtmlDocument document = htmlWeb.Load(this.htmlLink);
-        String title = normalize(this.htmlLink.Split('/')[3]);
-        if (title.Contains("html"))
+        String title = this.htmlLink.Split('/')[3];
+        if (title.Contains(".html"))
         {
-            title = title.Substring(0, title.Length - 4);
+            title = title.Substring(0, title.Length - 5);
         }
+        product.setTitle(title.Replace('-', ' ').ToLower());
+        title = normalize(title);
         productPricing.setStore(this.htmlLink.Split('/')[2]);
         Console.WriteLine("title:"+title);
         findNode(document.DocumentNode, title, 1);

@@ -59,6 +59,7 @@
     <Compile Include="Handle\HTMLParser.cs" />
     <Compile Include="Model\ProductPricing.cs" />
     <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\Word.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -30,11 +30,14 @@ namespace ParseHTML
                     //HTMLParser h = new HTMLParser(dataReader.GetValue(2).ToString());
                     //HTMLParser h = new HTMLParser("http://www.kaymu.pk/apple-iphone-6-128gb-silver-1901422.html");
                     //HTMLParser h = new HTMLParser("http://www.shophive.com/apple-iphone-6-128gb");
-                    HTMLParser h = new HTMLParser("https://www.daraz.pk/iphone-6-128gb-without-face-time-silver-apple-mpg45716.html");
-                    //HTMLParser h = new HTMLParser("https://homeshopping.pk/products/Apple-iPhone-6-128GB-Space-Gray-Factory-Unlocked-Price-in-Pakistan.html");
-                    h.doProcess();
-                    Product product = h.getProduct();//just have title
-                    ProductPricing productPricing = h.getProductPricing();
+                    //HTMLParser h = new HTMLParser("https://www.daraz.pk/iphone-6-128gb-without-face-time-silver-apple-mpg45716.html");
+                    ////HTMLParser h = new HTMLParser("https://homeshopping.pk/products/Apple-iPhone-6-128GB-Space-Gray-Factory-Unlocked-Price-in-Pakistan.html");
+                    //h.doProcess();
+                    //Product product = h.getProduct();//just have title
+                    //ProductPricing productPricing = h.getProductPricing();
+                    //Console.WriteLine(">>>"+product.getTitle());
+                    CRFProcess crfp = new CRFProcess();
+                    crfp.doProcess();
                 }
             }
             catch (Exception ex)
