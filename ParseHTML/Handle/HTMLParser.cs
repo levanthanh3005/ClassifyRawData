@@ -149,7 +149,7 @@ class HTMLParser
         foreach (HtmlNode item in psNodeLs)
         {
             //Console.WriteLine("1>" + item.InnerHtml);
-            String text = item.InnerHtml.Replace("&nbsp;", "").Replace("&gt;", "").Replace("&amp;", "&").Trim();
+            String text = item.InnerHtml.Replace("&nbsp;", "").Replace("&gt;", "").Replace("&amp;", "&").Replace("&quot;", "").Trim();
             text = Regex.Replace(text, "[^0-9a-zA-Z& ]+", "").ToLower();
             if (text.Replace(" ","").Replace("&","").Length>0 && !text.Equals("home") && !text.Equals("category"))
             {
@@ -254,7 +254,7 @@ class HTMLParser
         }
         if (status == 1)
         {
-            //if (node.InnerHtml != node.OuterHtml && node.InnerHtml.StartsWith("Apple iPhone"))
+            //if (node.InnerHtml != node.OuterHtml && node.InnerHtml.StartsWith("Apple MacBook"))
             //{
             //    Console.WriteLine(node.InnerHtml);
             //    Console.WriteLine(normalize(node.InnerHtml.Replace("&quot;", "")));
