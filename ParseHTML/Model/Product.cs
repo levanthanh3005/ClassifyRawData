@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,22 +16,29 @@ public class Product
     private String Brand;
     private String CreatedDate;
     private String ModifiedDate;
-    private String IsReviewed;
-    private String IsReported;
-    private String IsDeleted;
-    private String IsFeatured;
-    private String ClickCount;
+    private int IsReviewed;
+    private int IsReported;
+    private int IsDeleted;
+    private int IsFeatured;
+    private int ClickCount;
     private String Priority;
     private String ExtraCol1;
     private String ExtraCol2;
     private String Thumbnail;
     private String Image;
+    private String fullName;
 
     public Product()
     {
+        setCreatedDate(getDateNow());
+        setModifiedDate(getDateNow());
     }
-
-    public Product(String id, String uid, String Title, String Keywords, String Description, String Brand, String CreatedDate, String ModifiedDate, String IsReviewed, String IsReported, String IsDeleted, String IsFeatured, String ClickCount, String Priority, String ExtraCol1, String ExtraCol2, String Thumbnail, String Image)
+    public String getDateNow()
+    {
+        DateTime myDateTime = DateTime.Now;
+        return myDateTime.ToString("yyyy-MM-dd HH:mm:ss.fff");
+    }
+    public Product(String id, String uid, String Title, String Keywords, String Description, String Brand, String CreatedDate, String ModifiedDate, int IsReviewed, int IsReported, int IsDeleted, int IsFeatured, int ClickCount, String Priority, String ExtraCol1, String ExtraCol2, String Thumbnail, String Image)
     {
         this.id = id;
         this.uid = uid;
@@ -80,7 +89,15 @@ public class Product
     {
         this.Title = Title;
     }
+    public String getFullName()
+    {
+        return fullName;
+    }
 
+    public void setFullName(String fullName)
+    {
+        this.fullName = fullName;
+    }
     public String getKeywords()
     {
         return Keywords;
@@ -131,52 +148,52 @@ public class Product
         this.ModifiedDate = ModifiedDate;
     }
 
-    public String getIsReviewed()
+    public int getIsReviewed()
     {
         return IsReviewed;
     }
 
-    public void setIsReviewed(String IsReviewed)
+    public void setIsReviewed(int IsReviewed)
     {
         this.IsReviewed = IsReviewed;
     }
 
-    public String getIsReported()
+    public int getIsReported()
     {
         return IsReported;
     }
 
-    public void setIsReported(String IsReported)
+    public void setIsReported(int IsReported)
     {
         this.IsReported = IsReported;
     }
 
-    public String getIsDeleted()
+    public int getIsDeleted()
     {
         return IsDeleted;
     }
 
-    public void setIsDeleted(String IsDeleted)
+    public void setIsDeleted(int IsDeleted)
     {
         this.IsDeleted = IsDeleted;
     }
 
-    public String getIsFeatured()
+    public int getIsFeatured()
     {
         return IsFeatured;
     }
 
-    public void setIsFeatured(String IsFeatured)
+    public void setIsFeatured(int IsFeatured)
     {
         this.IsFeatured = IsFeatured;
     }
 
-    public String getClickCount()
+    public int getClickCount()
     {
         return ClickCount;
     }
 
-    public void setClickCount(String ClickCount)
+    public void setClickCount(int ClickCount)
     {
         this.ClickCount = ClickCount;
     }
@@ -233,5 +250,24 @@ public class Product
     public void setAutoUniqueId()
     {
         setUid(Guid.NewGuid().ToString());
+    }
+    public void synWithConnnection(SqlConnection cnn)
+    {
+        //cnn.Close();
+        //cnn.Open();
+        Console.WriteLine("synWithConnnection");
+        Console.WriteLine(this.getCreatedDate());
+        String sql = "Insert into dbo.Product "+
+            "(UId ,Title ,Keywords ,Description ,Brand ,CreatedDate ,ModifiedDate ,IsReviewed ,IsReported ,IsDeleted ,IsFeatured ,ClickCount ,Priority ,ExtraCol1 ,ExtraCol2 ,Thumbnail ,Image) values "+
+            "(@UId,@Title,@Keywords,@Description,@Brand,@CreatedDate,@ModifiedDate,0,0,0,0,0,null,null,null,null,null);";
+        SqlCommand command = new SqlCommand(sql, cnn);
+        command.Parameters.AddWithValue("@UId", this.getUid());
+        command.Parameters.AddWithValue("@Title", this.getTitle());
+        command.Parameters.AddWithValue("@Keywords", this.getKeywords());
+        command.Parameters.AddWithValue("@Description", this.getDescription());
+        command.Parameters.AddWithValue("@Brand", this.getBrand());
+        command.Parameters.AddWithValue("@ModifiedDate", this.getModifiedDate());
+        command.Parameters.AddWithValue("@CreatedDate", this.getCreatedDate());
+        int result = command.ExecuteNonQuery();
     }
 }

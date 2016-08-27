@@ -5,6 +5,9 @@ using edu.stanford.nlp.tagger.maxent;
 using Console = System.Console;
 using System.Collections.Generic;
 using System;
+using System.Diagnostics;
+using System.IO;
+using System.Text.RegularExpressions;
 
 public class CRFProcess
 {
@@ -12,37 +15,67 @@ public class CRFProcess
     {
         // crf_test -m model testdata.dat
     }
-    public List<Word> doProcess(List<Word> lsWord)
+    public Product doProcess(Product product)
     {
-        //string output = string.Empty;
-        //string error = string.Empty;
+        List<Word> lsW = setPosTag(product.getFullName());
+        writeFile(lsW);
+        lsW = setCRFTag(lsW);
+        String keyword = "";
+        String UId = "";
+        String brand = "";
+        foreach (Word w in lsW)
+        {
+            if (!w.getRsTag().Contains("O"))
+            {
+                keyword = keyword + w.getContent() + ",";
+            }
+            if (w.getRsTag().Contains("PDN"))
+            {
+                UId = UId + w.getContent();
+            }
+            if (w.getRsTag().Contains("BN"))
+            {
+                brand = brand + w.getContent();
+            }
+        }
+        Console.WriteLine("keyword:" + keyword + " >UID " + UId + " brand:"+brand);
+        product.setDescription(product.getTitle());
+        product.setKeywords(keyword);
+        product.setUid(UId);
+        product.setBrand(brand);
+        return product;
+    }
+    public List<Word> setCRFTag(List<Word> lsW)
+    {
+        string output = string.Empty;
+        string error = string.Empty;
 
-        //ProcessStartInfo processStartInfo = new ProcessStartInfo("cmd", "/c cd ../../CRF && crf_test -m model testdata.dat");
-        //processStartInfo.RedirectStandardOutput = true;
-        //processStartInfo.RedirectStandardError = true;
-        //processStartInfo.WindowStyle = ProcessWindowStyle.Normal;
-        //processStartInfo.UseShellExecute = false;
+        ProcessStartInfo processStartInfo = new ProcessStartInfo("cmd", "/c cd ../../CRF && crf_test -m model testdata.dat");
+        processStartInfo.RedirectStandardOutput = true;
+        processStartInfo.RedirectStandardError = true;
+        processStartInfo.WindowStyle = ProcessWindowStyle.Normal;
+        processStartInfo.UseShellExecute = false;
 
-        //Process process = Process.Start(processStartInfo);
+        Process process = Process.Start(processStartInfo);
 
-        //using (StreamReader streamReader = process.StandardOutput)
-        //{
-        //    output = streamReader.ReadToEnd();
-        //}
+        using (StreamReader streamReader = process.StandardOutput)
+        {
+            output = streamReader.ReadToEnd();
+        }
 
-        //using (StreamReader streamReader = process.StandardError)
-        //{
-        //    error = streamReader.ReadToEnd();
-        //}
-
-        //Console.WriteLine("The following output was detected:");
-        //Console.WriteLine(output);
-        //String[] lsLine = output.Split('\n');
-        //foreach(String s in lsLine)
-        //{
-        //    Console.WriteLine("=>"+s);
-        //}
-        return lsWord;
+        using (StreamReader streamReader = process.StandardError)
+        {
+            error = streamReader.ReadToEnd();
+        }
+        String[] lsLine = output.Split('\n');
+        for(int i = 0;i<lsW.Count;i++)
+        {
+            //Console.WriteLine(">>>"+lsLine[i]+"<");
+            //Console.WriteLine("$$>>>" + lsW[i].getContent() + "<");
+            lsW[i].setRsTag(lsLine[i].Split('\t')[2]);
+        }
+        Console.WriteLine("Done CRF");
+        return lsW;
     }
     public List<Word> setPosTag(String text)
     {
@@ -60,12 +93,44 @@ public class CRFProcess
         //           + "applications use more fine-grained POS tags like 'noun-plural'.";
 
         var sentences = MaxentTagger.tokenizeText(new java.io.StringReader(text)).toArray();
-        Console.WriteLine("Set Pos Tag");
         foreach (ArrayList sentence in sentences)
         {
             var taggedSentence = tagger.tagSentence(sentence);
-            Console.WriteLine(Sentence.listToString(taggedSentence, false));
+            foreach(TaggedWord s in taggedSentence.toArray())
+            {
+                Word w = new Word();
+                w.setContent(s.word());
+                w.setPosTag(s.tag());
+                //Console.WriteLine(">>" + s.word());
+                //Console.WriteLine(">>" + s.tag());
+                lsW.Add(w);
+            }
         }
+        Console.WriteLine("Done PosTag");
         return lsW;
     }
+    public void writeFile(List<Word> lsW)
+    {
+        Console.WriteLine("Start Writefile for CRF");
+        StreamWriter file = new StreamWriter(@"../../CRF/testdata.dat");
+        foreach (Word w in lsW)
+        {
+            // If the line doesn't contain the word 'Second', write the line to the file.
+            String tag = w.getPosTag();
+            if (tag.StartsWith("NN"))
+            {
+                tag = "NN";
+            }
+            //tag = Regex.Replace(tag, "[^0-9a-zA-Z]+", "");
+            file.WriteLine(w.getContent()+" "+tag);
+        }
+        file.Close();
+        Console.WriteLine("Done Writefile for CRF");
+    }
+    /*crf_learn template train.dat model
+     * PDN: Product name
+     * PDT: Produc type
+     * O: outside
+     * BN: Brand name
+     */
 }
