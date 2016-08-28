@@ -78,6 +78,10 @@ public class Product
     public void setUid(String uid)
     {
         this.uid = uid;
+        if (uid.Length==0)
+        {
+            Accuracy.addIssue(new Accuracy.Issue(Accuracy.id, Accuracy.url, "No Uid"));
+        }
     }
 
     public String getTitle()
@@ -126,6 +130,10 @@ public class Product
     public void setBrand(String Brand)
     {
         this.Brand = Brand;
+        if (Brand.Length == 0)
+        {
+            Accuracy.addIssue(new Accuracy.Issue(Accuracy.id, Accuracy.url, "No Brand"));
+        }
     }
 
     public String getCreatedDate()

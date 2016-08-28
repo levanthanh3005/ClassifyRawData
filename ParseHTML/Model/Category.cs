@@ -67,7 +67,7 @@ class Category
     {
         if (parentCatId == null)
         {
-            parentCatId = "-1";
+            return;
         }
         String sql = "Insert into dbo.CategoryProduct " +
     "(ProductId,CategoryId,IsReviewed,IsDeleted,Priority) values " +

@@ -176,6 +176,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Handle\CRFProcess.cs" />
+    <Compile Include="Handle\HTMLLoadData.cs" />
     <Compile Include="Handle\HTMLParser.cs" />
     <Compile Include="Model\Accuracy.cs" />
     <Compile Include="Model\Category.cs" />

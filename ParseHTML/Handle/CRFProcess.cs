@@ -40,7 +40,6 @@ public class CRFProcess
         }
         Console.WriteLine("keyword:" + keyword + " >UID " + UId + " brand:"+brand);
         product.setDescription(product.getTitle());
-        product.setKeywords(keyword);
         product.setUid(UId);
         product.setBrand(brand);
         return product;

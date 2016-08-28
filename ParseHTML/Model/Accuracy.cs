@@ -9,6 +9,8 @@ public static class Accuracy
     public static int totalCount = 0;
     public static int wrongItemCount = 0;
     public static List<Issue> lsIssue = new List<Issue>();
+    public static String id;
+    public static String url;
     public static void addItemCount()
     {
         totalCount++;

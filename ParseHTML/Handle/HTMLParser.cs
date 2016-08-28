@@ -74,9 +74,20 @@ class HTMLParser
             findNode(document.DocumentNode, "", 0);
             String title = psNodeLs[0].InnerHtml.Replace("&quot;", "");
             Console.WriteLine("Title:" + title);
-            psNodeLs = new List<HtmlNode>();
             product.setTitle(title.Replace('-', ' ').ToLower());
-          
+
+            //find keyword
+            psNodeLs = new List<HtmlNode>();
+            findNode(document.DocumentNode, "keyword", 7);
+            String keyword = "";
+            if (psNodeLs.Count > 0 && psNodeLs[0].Attributes.Contains("content"))
+            {
+                keyword = psNodeLs[0].Attributes["content"].Value;
+                //node.Attributes.Contains("name") && (node.Attributes["name"].Value).StartsWith(text)
+            }
+            Console.WriteLine("keyword:" + keyword);
+            product.setKeywords(keyword);
+
             //find breadcrumbs
             psNodeLs = new List<HtmlNode>();
             findNode(document.DocumentNode, "breadcrumb", 5);
@@ -245,6 +256,7 @@ class HTMLParser
         //status = 4 : find currency
         //status = 5 : find breadcrumb
         //status = 6 : list all node text in breadcrumb
+        //status = 7 : find keyword
         if (status == 0)
         {
             if (node.Name.ToLower()=="title" && node.InnerHtml != node.OuterHtml)
@@ -309,6 +321,19 @@ class HTMLParser
         if (status == 6)
         {
             if (!node.HasChildNodes && node.InnerHtml == node.OuterHtml)
+            {
+                psNodeLs.Add(node);
+            }
+        }
+        if (status == 7)
+        {
+            //if (node.Attributes.Contains("name") && (node.Attributes["name"].Value).StartsWith(text))
+            //{
+            //    Console.WriteLine("have meta:"+node.OuterHtml);
+            //    Console.WriteLine("have meta:" + node.Attributes["content"]);
+            //    Console.ReadLine();
+            //}
+            if (node.Attributes.Contains("name") && (node.Attributes["name"].Value).StartsWith(text))
             {
                 psNodeLs.Add(node);
             }

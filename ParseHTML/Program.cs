@@ -28,12 +28,16 @@ namespace ParseHTML
                 SqlDataReader dataReader = command.ExecuteReader();
                 while (dataReader.Read())
                 {
+                    //HTMLLoadData h = new HTMLLoadData(dataReader.GetValue(2).ToString(), dataReader.GetValue(0).ToString());
+                    //h.synWithConnnection(cnn2);
                     Console.WriteLine(dataReader.GetValue(0));
                     //HTMLParser h = new HTMLParser("http://www.kaymu.pk/apple-iphone-6-128gb-silver-1901422.html","1");
                     //HTMLParser h = new HTMLParser("http://www.shophive.com/apple-iphone-6-128gb","1");
                     //HTMLParser h = new HTMLParser("https://www.daraz.pk/iphone-6-128gb-without-face-time-silver-apple-mpg45716.html","1");
                     //HTMLParser h = new HTMLParser("https://homeshopping.pk/products/Apple-iPhone-6-128GB-Space-Gray-Factory-Unlocked-Price-in-Pakistan.html","1");
                     HTMLParser h = new HTMLParser(dataReader.GetValue(2).ToString(), dataReader.GetValue(0).ToString());
+                    Accuracy.id = dataReader.GetValue(0).ToString();
+                    Accuracy.url = dataReader.GetValue(2).ToString();
                     h.doProcess();
                     Product product = h.getProduct();//just have title
                     ProductPricing productPricing = h.getProductPricing();
@@ -46,7 +50,7 @@ namespace ParseHTML
                     cat.synWithConnnection(cnn2);
                     cat.synWithConnnectionWithProduct(cnn2, productPricing.getProductId());
                     Accuracy.addItemCount();
-                    Console.WriteLine("Done with Accuracy:"+Accuracy.getAccuracy());
+                    Console.WriteLine("Done with Accuracy:" + Accuracy.getAccuracy());
                 }
             }
             catch (Exception ex)
