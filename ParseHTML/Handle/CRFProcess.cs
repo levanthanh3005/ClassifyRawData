@@ -22,6 +22,7 @@ public class CRFProcess
         lsW = setCRFTag(lsW);
         String keyword = "";
         String UId = "";
+        List<String> lsCt = new List<string>();
         String brand = "";
         foreach (Word w in lsW)
         {
@@ -31,16 +32,24 @@ public class CRFProcess
             }
             if (w.getRsTag().Contains("PDN"))
             {
-                UId = UId + w.getContent();
+                //UId = UId + w.getContent() + "-";
+                lsCt.Add(w.getContent());
             }
             if (w.getRsTag().Contains("BN"))
             {
                 brand = brand + w.getContent();
             }
         }
+        lsCt.Sort();
+        foreach(String s in lsCt)
+        {
+            UId = UId + s + "-";
+        }
+        //Console.ReadLine();
         Console.WriteLine("keyword:" + keyword + " >UID " + UId + " brand:"+brand);
         product.setDescription(product.getTitle());
-        product.setUid(UId);
+        product.setUid(UId.TrimEnd('-'));
+        //product.setKeywords(keyword);
         product.setBrand(brand);
         return product;
     }
@@ -69,7 +78,7 @@ public class CRFProcess
         String[] lsLine = output.Split('\n');
         for(int i = 0;i<lsW.Count;i++)
         {
-            //Console.WriteLine(">>>"+lsLine[i]+"<");
+            Console.WriteLine(">>>"+lsLine[i]+"<");
             //Console.WriteLine("$$>>>" + lsW[i].getContent() + "<");
             lsW[i].setRsTag(lsLine[i].Split('\t')[2]);
         }
@@ -78,6 +87,16 @@ public class CRFProcess
     }
     public List<Word> setPosTag(String text)
     {
+        //text = "apple imac retina 5k 27 mf886 price in pakistan";
+        String[] lst= Regex.Split(text, "([0-9]+)");
+        text = "";
+        foreach(String s in lst)
+        {
+            text = text + s + " ";
+        }
+        //string alphaPart = result.Groups[1].Value;
+        //string numberPart = result.Groups[2].Value;
+
         List<Word> lsW = new List<Word>();
         var jarRoot = @"..\..\CRF\stanford-postagger-full-2015-12-09";
         var modelsDirectory = jarRoot + @"\models";
@@ -106,6 +125,7 @@ public class CRFProcess
             }
         }
         Console.WriteLine("Done PosTag");
+        //Console.ReadLine();
         return lsW;
     }
     public void writeFile(List<Word> lsW)

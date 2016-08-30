@@ -129,10 +129,106 @@ class HTMLParser
             }
             productPricing.setUrl(this.htmlLink);
             productPricing.setStore(this.htmlLink.Split('/')[2]);
-        }catch(Exception e)
+
+            //find Img
+            Console.WriteLine("find image");
+            product.setImage("");
+            psNodeLs = new List<HtmlNode>();
+            foreach (var item in psNodeTitleLs)
+            {
+                //Console.WriteLine("In node to find image:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+                //Console.WriteLine(item.ParentNode.OuterHtml);
+                if (item.Name == "title") continue;
+                findImage(item);
+            }
+            //Console.WriteLine("result img node");
+            HtmlNode imgNode = null;
+            if (psNodeLs.Count == 1)
+            {
+                //product.setImage(psNodeLs[0].Attributes["src"].Value);
+                imgNode = psNodeLs[0];
+            }
+            else
+            {
+                foreach (var item in psNodeLs)
+                {
+                    Console.WriteLine(item.OuterHtml);
+                    if (StringCompare(normalize(product.getFullName().Replace("&quot;", "")), normalize(item.Attributes["alt"].Value.Replace("&quot;", ""))) > 10)
+                    {
+                        imgNode = item;
+                        break;
+                    }
+                    //Console.WriteLine(StringCompare(normalize(product.getFullName().Replace("&quot;", "")), normalize(item.Attributes["alt"].Value.Replace("&quot;", ""))));
+                    //Console.WriteLine(item.Attributes["alt"].Value);
+                    //Console.WriteLine(product.getFullName());
+                    //Console.ReadLine();
+                }
+            }
+            if (imgNode != null)
+            {
+                foreach (var att in imgNode.Attributes)
+                {
+                    if (!att.Value.ToLower().Contains("loading"))
+                    {
+                        product.setImage(att.Value);
+                        break;
+                    }
+                }
+            }
+            //Console.ReadLine();
+        }
+        catch(Exception e)
         {
             Accuracy.addWrongItemCount();
             Accuracy.addIssue(new Accuracy.Issue(this.urlId, this.htmlLink, e.ToString()));
+            Console.WriteLine("Error:" + e.ToString());
+        }
+    }
+    public void findImage(HtmlNode node)
+    {
+        //Console.WriteLine("start to find image");
+        //Console.WriteLine(node.OuterHtml);
+        //Console.ReadLine();
+        ////find node that id or class contain image, galery, preview
+        //psNodeLs = new List<HtmlNode>();
+        //findNode(rootNode, "", 8);
+        //Console.WriteLine("findImage");
+        //foreach(HtmlNode h in psNodeLs )
+        //{
+        //    Console.WriteLine(h.InnerHtml);
+        //}
+        //Console.ReadLine();
+        if (node.Name == "body")
+        {
+            Console.WriteLine("stop 1");
+            //Console.ReadLine();
+            return;
+        }
+        if (node.OuterHtml.ToLower().Contains("breadcrumb"))
+        {
+            Console.WriteLine("stop 2");
+            //Console.ReadLine();
+            return;
+        }
+        if (node.OuterHtml.Contains("img"))
+        {
+            //Console.WriteLine("find image begin find node:"+node.ChildNodes.Count);
+            //Console.WriteLine(node.InnerHtml.Contains("img"));
+            //Console.ReadLine();
+            findNode(node, "img", 9);
+            //List<HtmlNode> lsn =  node.ChildNodes.Where(n => n.Name.Contains("img")).ToList();
+            //foreach(var ni in lsn)
+            //{
+            //    Console.WriteLine(ni.InnerHtml);
+            //    psNodeLs.Add(ni);
+            //}
+            //Console.ReadLine();
+            return;
+        }
+        {
+            Console.WriteLine("begin to loop");
+            //Console.ReadLine();
+            findImage(node.ParentNode);
         }
     }
     public List<String> seperateBreadcrumb(HtmlNode bcNode)
@@ -257,6 +353,8 @@ class HTMLParser
         //status = 5 : find breadcrumb
         //status = 6 : list all node text in breadcrumb
         //status = 7 : find keyword
+        //status = 8 : find Image
+        //status = 9 : find by name of node
         if (status == 0)
         {
             if (node.Name.ToLower()=="title" && node.InnerHtml != node.OuterHtml)
@@ -336,6 +434,33 @@ class HTMLParser
             if (node.Attributes.Contains("name") && (node.Attributes["name"].Value).StartsWith(text))
             {
                 psNodeLs.Add(node);
+            }
+        }
+        //if (status == 8)
+        //{
+        //    if (node.InnerHtml.Contains("img"))
+        //    {
+        //        foreach (string s in new string[2] { "class", "id" }) {
+        //            if (node.Attributes.Contains(s))
+        //            {
+        //                String sv = node.Attributes[s].Value.ToLower();
+        //                if (sv.Contains("image") || sv.Contains("preview") || sv.Contains("gallery")) psNodeLs.Add(node);
+        //            }
+        //        }
+        //    }
+        //}
+        if (status == 9)
+        {
+            if (node.OuterHtml.Contains(text))
+            {
+                //Console.WriteLine(node.OuterHtml);
+                //Console.WriteLine("^^^>>" + node.Name + " " + (node.Name.Contains(text)) + " " + node.OuterHtml.Contains(text) + " " + node.ChildNodes.Count);
+                //Console.ReadLine();
+                if (node.Name.Contains(text))
+                {
+                    //Console.WriteLine("have node name");
+                    psNodeLs.Add(node);
+                }
             }
         }
         foreach (HtmlNode nodeS in node.ChildNodes)

@@ -267,7 +267,7 @@ public class Product
         Console.WriteLine(this.getCreatedDate());
         String sql = "Insert into dbo.Product "+
             "(UId ,Title ,Keywords ,Description ,Brand ,CreatedDate ,ModifiedDate ,IsReviewed ,IsReported ,IsDeleted ,IsFeatured ,ClickCount ,Priority ,ExtraCol1 ,ExtraCol2 ,Thumbnail ,Image) values "+
-            "(@UId,@Title,@Keywords,@Description,@Brand,@CreatedDate,@ModifiedDate,0,0,0,0,0,null,null,null,null,null);";
+            "(@UId,@Title,@Keywords,@Description,@Brand,@CreatedDate,@ModifiedDate,0,0,0,0,0,null,null,null,null,@Image);";
         SqlCommand command = new SqlCommand(sql, cnn);
         command.Parameters.AddWithValue("@UId", this.getUid());
         command.Parameters.AddWithValue("@Title", this.getTitle());
@@ -276,6 +276,7 @@ public class Product
         command.Parameters.AddWithValue("@Brand", this.getBrand());
         command.Parameters.AddWithValue("@ModifiedDate", this.getModifiedDate());
         command.Parameters.AddWithValue("@CreatedDate", this.getCreatedDate());
+        command.Parameters.AddWithValue("@Image", this.getImage());
         int result = command.ExecuteNonQuery();
     }
 }
