@@ -11,11 +11,12 @@ namespace ParseHTML
     {
         static void Main(string[] args)
         {
-           // Console.WriteLine("apple iphone 6 128gb silver".("apple iphone 6 128gb silver 1901422"));
+            // Console.WriteLine("apple iphone 6 128gb silver".("apple iphone 6 128gb silver 1901422"));
+            Config.readConfig();
             string connetionString = null;
             SqlConnection cnn;
             SqlConnection cnn2;
-            connetionString = "Data Source=LEVANTHANH-PC;Initial Catalog=ProManagement;User ID=root;Password=12345678";
+            connetionString = "Data Source="+Config.dataSource+";Initial Catalog="+Config.dbName+";User ID="+Config.user+";Password="+Config.pass;
             try
             {
                 cnn = new SqlConnection(connetionString);
@@ -23,7 +24,7 @@ namespace ParseHTML
                 cnn.Close();cnn.Open();
                 cnn2.Close(); cnn2.Open();
                 Console.WriteLine("Done connection");
-                String sql = "select * from SampleRawPage";
+                String sql = "select * from dbo.RawPage where id<10";
                 SqlCommand command = new SqlCommand(sql, cnn);
                 SqlDataReader dataReader = command.ExecuteReader();
                 while (dataReader.Read())
@@ -35,7 +36,7 @@ namespace ParseHTML
                     //HTMLParser h = new HTMLParser("http://www.shophive.com/apple-iphone-6-128gb","1");
                     //HTMLParser h = new HTMLParser("https://www.daraz.pk/iphone-6-128gb-without-face-time-silver-apple-mpg45716.html","1");
                     //HTMLParser h = new HTMLParser("https://homeshopping.pk/products/Apple-iPhone-6-128GB-Space-Gray-Factory-Unlocked-Price-in-Pakistan.html","1");
-                    HTMLParser h = new HTMLParser(dataReader.GetValue(2).ToString(), dataReader.GetValue(0).ToString());
+                    HTMLParser h = new HTMLParser(dataReader.GetValue(2).ToString(), dataReader.GetValue(0).ToString(), null);
                     Accuracy.id = dataReader.GetValue(0).ToString();
                     Accuracy.url = dataReader.GetValue(2).ToString();
                     h.doProcess();
@@ -43,6 +44,10 @@ namespace ParseHTML
                     ProductPricing productPricing = h.getProductPricing();
                     CRFProcess crfp = new CRFProcess();
                     //crfp.doProcess();
+                    if (product.getFullName() == null)
+                    {
+                        continue;
+                    }
                     product = crfp.doProcess(product);
                     product.synWithConnnection(cnn2);
                     productPricing.synWithConnnection(cnn2);

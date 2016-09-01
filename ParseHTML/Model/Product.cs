@@ -261,22 +261,38 @@ public class Product
     }
     public void synWithConnnection(SqlConnection cnn)
     {
-        //cnn.Close();
-        //cnn.Open();
-        Console.WriteLine("synWithConnnection");
-        Console.WriteLine(this.getCreatedDate());
-        String sql = "Insert into dbo.Product "+
-            "(UId ,Title ,Keywords ,Description ,Brand ,CreatedDate ,ModifiedDate ,IsReviewed ,IsReported ,IsDeleted ,IsFeatured ,ClickCount ,Priority ,ExtraCol1 ,ExtraCol2 ,Thumbnail ,Image) values "+
-            "(@UId,@Title,@Keywords,@Description,@Brand,@CreatedDate,@ModifiedDate,0,0,0,0,0,null,null,null,null,@Image);";
-        SqlCommand command = new SqlCommand(sql, cnn);
-        command.Parameters.AddWithValue("@UId", this.getUid());
-        command.Parameters.AddWithValue("@Title", this.getTitle());
-        command.Parameters.AddWithValue("@Keywords", this.getKeywords());
-        command.Parameters.AddWithValue("@Description", this.getDescription());
-        command.Parameters.AddWithValue("@Brand", this.getBrand());
-        command.Parameters.AddWithValue("@ModifiedDate", this.getModifiedDate());
-        command.Parameters.AddWithValue("@CreatedDate", this.getCreatedDate());
-        command.Parameters.AddWithValue("@Image", this.getImage());
-        int result = command.ExecuteNonQuery();
+        try
+        {
+            //cnn.Close();
+            //cnn.Open();
+            Console.WriteLine("synWithConnnection:>" + this.getImage() + "<");
+            //Console.WriteLine(this.getUid()+" "+ this.getUid().Length);
+            //Console.WriteLine(this.getTitle() + " " + this.getTitle().Length);
+            //Console.WriteLine(this.getKeywords() + " " + this.getKeywords().Length);
+            //Console.WriteLine(this.getDescription() + " " + this.getDescription().Length);
+            //Console.WriteLine(this.getBrand() + " " + this.getBrand().Length);
+            //Console.WriteLine(this.getModifiedDate() + " " + this.getModifiedDate().Length);
+            //Console.WriteLine(this.getCreatedDate() + " " + this.getCreatedDate().Length);
+            //Console.WriteLine(this.getImage() + " " + this.getImage().Length);
+            String sql = "Insert into dbo.Product " +
+                "(UId ,Title ,Keywords ,Description ,Brand ,CreatedDate ,ModifiedDate ,IsReviewed ,IsReported ,IsDeleted ,IsFeatured ,ClickCount ,Priority ,ExtraCol1 ,ExtraCol2 ,Thumbnail ,Image) values " +
+                "(@UId,@Title,@Keywords,@Description,@Brand,@CreatedDate,@ModifiedDate,0,0,0,0,0,null,null,null,null,@Image);";
+            SqlCommand command = new SqlCommand(sql, cnn);
+            command.Parameters.AddWithValue("@UId", this.getUid());
+            command.Parameters.AddWithValue("@Title", this.getTitle());
+            command.Parameters.AddWithValue("@Keywords", this.getKeywords());
+            command.Parameters.AddWithValue("@Description", this.getDescription());
+            command.Parameters.AddWithValue("@Brand", this.getBrand());
+            command.Parameters.AddWithValue("@ModifiedDate", this.getModifiedDate());
+            command.Parameters.AddWithValue("@CreatedDate", this.getCreatedDate());
+            command.Parameters.AddWithValue("@Image", this.getImage());
+            int result = command.ExecuteNonQuery();
+        }
+        catch (Exception e)
+        {
+            Accuracy.addWrongItemCount();
+            Accuracy.addIssue(new Accuracy.Issue(Accuracy.id, Accuracy.url, "synWithConnnection in product " + e.ToString()));
+            Console.WriteLine("Error:" + e.ToString());
+        }
     }
 }

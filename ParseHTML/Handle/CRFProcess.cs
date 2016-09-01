@@ -76,12 +76,15 @@ public class CRFProcess
             error = streamReader.ReadToEnd();
         }
         String[] lsLine = output.Split('\n');
+        String sf = "";
         for(int i = 0;i<lsW.Count;i++)
         {
             Console.WriteLine(">>>"+lsLine[i]+"<");
             //Console.WriteLine("$$>>>" + lsW[i].getContent() + "<");
             lsW[i].setRsTag(lsLine[i].Split('\t')[2]);
+            sf = sf + lsLine[i] + "\n";
         }
+        Accuracy.addIssue(new Accuracy.Issue(Accuracy.id,Accuracy.url, sf));
         Console.WriteLine("Done CRF");
         return lsW;
     }

@@ -11,6 +11,7 @@ class HTMLParser
 {
     private String htmlLink;//its url
     private String urlId;//its url
+    private String htmlValue = null;//its url
     private Product product = new Product();
     private ProductPricing productPricing = new ProductPricing();
     private List<HtmlNode> psNodeLs = new List<HtmlNode>();
@@ -27,10 +28,11 @@ class HTMLParser
     {
         return lsBreadcrumb;
     }
-    public HTMLParser(String htmlLink, String urlId)
+    public HTMLParser(String htmlLink, String urlId, String htmlValue)
     {
         this.htmlLink = htmlLink;
         this.urlId = urlId;
+        this.htmlValue = htmlValue;
     }
     private String normalize(String text)
     {
@@ -68,7 +70,17 @@ class HTMLParser
             };
 
             //Load web
-            HtmlDocument document = htmlWeb.Load(this.htmlLink);
+            HtmlDocument document = null;
+            if (htmlValue == null)
+            {
+                document = htmlWeb.Load(this.htmlLink);
+            }
+            else
+            {
+                document.LoadHtml(htmlValue);
+            }
+            //Console.WriteLine(document.DocumentNode);
+            //Console.ReadLine();
             //find Title
             psNodeLs = new List<HtmlNode>();
             findNode(document.DocumentNode, "", 0);
@@ -114,8 +126,8 @@ class HTMLParser
             psNodeLs = new List<HtmlNode>();
             foreach (var item in psNodeTitleLs)
             {
-                Console.WriteLine("In node to find price");
-                Console.WriteLine(item.InnerHtml);
+                //Console.WriteLine("In node to find price");
+                //Console.WriteLine(item.InnerHtml);
                 if (item.Name == "title") continue;
                 findNodeContainPrice(item);
             }
@@ -152,7 +164,7 @@ class HTMLParser
             {
                 foreach (var item in psNodeLs)
                 {
-                    Console.WriteLine(item.OuterHtml);
+                    //Console.WriteLine(item.OuterHtml);
                     if (StringCompare(normalize(product.getFullName().Replace("&quot;", "")), normalize(item.Attributes["alt"].Value.Replace("&quot;", ""))) > 10)
                     {
                         imgNode = item;
@@ -175,7 +187,12 @@ class HTMLParser
                     }
                 }
             }
+            //if (product.getImage() == null || product.getImage().Length == 0)
+            //{
+            //    product.setImage("Not found");
+            //}
             //Console.ReadLine();
+            Console.WriteLine("Done all");
         }
         catch(Exception e)
         {
@@ -200,13 +217,13 @@ class HTMLParser
         //Console.ReadLine();
         if (node.Name == "body")
         {
-            Console.WriteLine("stop 1");
+            //Console.WriteLine("stop 1");
             //Console.ReadLine();
             return;
         }
         if (node.OuterHtml.ToLower().Contains("breadcrumb"))
         {
-            Console.WriteLine("stop 2");
+            //Console.WriteLine("stop 2");
             //Console.ReadLine();
             return;
         }
@@ -226,7 +243,7 @@ class HTMLParser
             return;
         }
         {
-            Console.WriteLine("begin to loop");
+            //Console.WriteLine("begin to loop");
             //Console.ReadLine();
             findImage(node.ParentNode);
         }
@@ -279,7 +296,7 @@ class HTMLParser
             return;
         }
         String oldPrice = "0";
-        String newPrice = "";
+        String newPrice = "0";
         String currency = "";
         //HtmlNode prNode = psNodeLs[0];
         psNodeLs = new List<HtmlNode>();
@@ -299,7 +316,7 @@ class HTMLParser
                 }
             }
         }
-        else
+        else if (psNodeLs.Count == 1)
         {
             oldPrice = "0";
             newPrice = normalize(psNodeLs[0].InnerHtml).ToUpper();
@@ -323,7 +340,10 @@ class HTMLParser
             //{
             //    Console.WriteLine(">>>" + nodeS.InnerHtml+" "+nodeS.ChildNodes.Count );
             //}
-            currency = normalize(psNodeLs[0].InnerHtml).ToUpper();
+            if (psNodeLs.Count > 0)
+            {
+                currency = normalize(psNodeLs[0].InnerHtml).ToUpper();
+            }
         }
         Console.WriteLine("oldPrice:" + oldPrice + " newPrice:" + newPrice + " currency:" + currency);
         productPricing.setOldPrice(oldPrice);

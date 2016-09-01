@@ -117,27 +117,36 @@ public class ProductPricing
     }
     public void synWithConnnection(SqlConnection cnn)
     {
-        //cnn.Close();
-        //cnn.Open();
-        Console.WriteLine("synWithConnnection");
-        String sql = "select MAX(id) from dbo.Product;";
-        SqlCommand command = new SqlCommand(sql, cnn);
-        SqlDataReader dataReader = command.ExecuteReader();
-        dataReader.Read();
-        Console.WriteLine("ID:"+dataReader.GetValue(0)+">"+this.getOldPrice()+">"+this.getNewPrice());
-        setProductId(int.Parse(dataReader.GetValue(0).ToString()));
-        dataReader.Close();
-        sql = "Insert into dbo.ProductPricing "+
-            "( ProductId ,OldPrice ,NewPrice ,Currency ,Store ,Url ,Timestamp) values "+
-            "(@ProductId,@OldPrice,@NewPrice,@Currency,@Store,@Url,@Timestamp);";
-        command = new SqlCommand(sql, cnn);
-        command.Parameters.AddWithValue("@ProductId", this.getProductId());
-        command.Parameters.AddWithValue("@OldPrice", this.getOldPrice());
-        command.Parameters.AddWithValue("@NewPrice", this.getNewPrice());
-        command.Parameters.AddWithValue("@Currency", this.getCurrency());
-        command.Parameters.AddWithValue("@Store", this.getStore());
-        command.Parameters.AddWithValue("@Url", this.getUrl());
-        command.Parameters.AddWithValue("@Timestamp", this.getTimestamp());
-        int result = command.ExecuteNonQuery();
+        try
+        {
+            //cnn.Close();
+            //cnn.Open();
+            Console.WriteLine("synWithConnnection");
+            String sql = "select MAX(id) from dbo.Product;";
+            SqlCommand command = new SqlCommand(sql, cnn);
+            SqlDataReader dataReader = command.ExecuteReader();
+            dataReader.Read();
+            Console.WriteLine("ID:" + dataReader.GetValue(0) + ">" + this.getOldPrice() + ">" + this.getNewPrice());
+            setProductId(int.Parse(dataReader.GetValue(0).ToString()));
+            dataReader.Close();
+            sql = "Insert into dbo.ProductPricing " +
+                "( ProductId ,OldPrice ,NewPrice ,Currency ,Store ,Url ,Timestamp) values " +
+                "(@ProductId,@OldPrice,@NewPrice,@Currency,@Store,@Url,@Timestamp);";
+            command = new SqlCommand(sql, cnn);
+            command.Parameters.AddWithValue("@ProductId", this.getProductId());
+            command.Parameters.AddWithValue("@OldPrice", this.getOldPrice());
+            command.Parameters.AddWithValue("@NewPrice", this.getNewPrice());
+            command.Parameters.AddWithValue("@Currency", this.getCurrency());
+            command.Parameters.AddWithValue("@Store", this.getStore());
+            command.Parameters.AddWithValue("@Url", this.getUrl());
+            command.Parameters.AddWithValue("@Timestamp", this.getTimestamp());
+            int result = command.ExecuteNonQuery();
+        }
+        catch (Exception e)
+        {
+            Accuracy.addWrongItemCount();
+            Accuracy.addIssue(new Accuracy.Issue(Accuracy.id, Accuracy.url, "synWithConnnection in product pricing " + e.ToString()));
+            Console.WriteLine("Error:" + e.ToString());
+        }
     }
 }

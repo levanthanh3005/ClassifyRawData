@@ -582,3 +582,1143 @@ quad NN PDN
 core NN PDN
 me PRP O
 586 CD O
+
+getiit NN BN
+joy NN BN
+stupid JJ PDN
+wrist NN PDN
+bsnd NN O
+green NN O
+
+proda NN BN
+30500 CD PDN
+mah NN PDN
+notebook NN O
+style NN O
+5 CD O
+usb NN PDN
+outputs NN PDN
+powerbank VBP PDN
+white JJ O
+with IN O
+space NN O
+single JJ O
+ports NN O
+charger NN O
+
+space NN O
+iphone NN O
+9 CD O
+back NN O
+power NN PDN
+case NN PDN
+standing VBG O
+option NN O
+too RB O
+3563 CD O
+mah NN O
+power NN O
+
+darkfashion NN BN
+sneakers NN PDN
+
+yellow NN BN
+fashion NN BN
+sneakers NN PDN
+
+lacosteloafers NN PDN
+
+lenovo IN PDN
+b DT O
+338 CD O
+
+lenovo IN PDN
+
+boomfashion NN BN
+sandals NN PDN
+
+samsung VBG BN
+galaxy JJ PDN
+tab NN PDN
+b DT O
+99 CD O
+x NN O
+554 CD O
+y NN O
+
+space NN O
+play NN O
+in IN O
+hand NN O
+handsfree NN O
+comfortable JJ O
+headphones NN PDN
+stereo NN PDN
+volume NN O
+hearable JJ O
+green NN O
+
+usb NN PDN
+to TO O
+typec VB O
+microusb NN PDN
+to TO O
+typec VB O
+adapters NN PDN
+
+15	CD	O
+nido	NN	BN
+hard	JJ	PDN
+shell	NN	PDN
+case	NN	PDN
+for	IN	O
+macbook	FW	O
+pro	FW	O
+mini	FW	O
+hsnimbr	FW	O
+19	CD	O
+white	JJ	O
+
+3	CD	PDN
+in	IN	O
+1	CD	O
+iflash	JJ	O
+androidiphonepc	NN	O
+99	CD	O
+gb	NN	O
+otg	NN	O
+usb	NN	PDN
+drive	NN	PDN
+yellow	JJ	O
+
+remax	FW	O
+iphone	FW	O
+99	CD	O
+s	VBZ	O
+ming	JJ	PDN
+casebumper	NN	PDN
+green	NN	O
+
+remax FW O
+iphone FW O
+66 CD O
+s VBZ O
+plus JJ O
+ming JJ PDN
+casebumper NN PDN
+blue NN O
+
+remax	FW	O
+iphone	FW	O
+6	CD	O
+plus	CC	O
+maze	NN	O
+series	NN	O
+back	RB	PDN
+cover	VBP	PDN
+silver	NN	O
+
+6	CD	O
+in	IN	O
+2	CD	O
+iflash	JJ	O
+androidiphonepc	NN	O
+19	CD	O
+gb	NN	O
+otg	NN	O
+usb	NN	PDN
+drive	NN	PDN
+dark	JJ	O
+price	NN	O
+in	IN	O
+pakistan	NN	O
+
+remax	FW	O
+rbm	FW	O
+6	CD	O
+bluetoothnfc	JJ	PDN
+speaker	NN	PDN
+with	IN	O
+leather	NN	O
+handle	VBP	O
+medal	NN	O
+
+type	NN	O
+d	NN	O
+to	TO	O
+usb	VB	PDN
+adapter	NN	PDN
+pink	NN	O
+
+type	NN	O
+f	NN	O
+to	TO	O
+usb	VB	PDN
+adapter	NN	PDN
+golden	NN	O
+
+moshi	FW	BN
+iglaze	FW	PDN
+pro	FW	PDN
+15	CD	PDN
+translucent	JJ	O
+black	NN	O
+
+moshi	FW	BN
+iglaze	FW	PDN
+pro	FW	PDN
+retina	FW	PDN
+10	CD	PDN
+translucent	JJ	O
+blue	JJ	O
+black	JJ	O
+gold	NN	O
+green	NN	O
+
+moshi	FW	BN
+iglaze	FW	PDN
+macbook	FW	PDN
+12	CD	PDN
+green	JJ	O
+
+moshi	NN	BN
+ultra	VBP	PDN
+thin	JJ	PDN
+hdmi	NN	PDN
+to	TO	O
+hdmi	VB	PDN
+256	CD	PDN
+ft	NN	O
+9	CD	O
+metre	NN	O
+
+moshi	NN	BN
+high	RB	PDN
+speed	VBP	PDN
+hdmi	NN	PDN
+to	TO	O
+hdmi	VB	PDN
+2	CD	PDN
+metre	NN	O
+
+moshi	NN	BN
+mini	NN	PDN
+display	VBP	PDN
+to	TO	O
+hdmi	VB	PDN
+cable	NN	PDN
+
+apple	NN	BN
+macbook	NN	PDN
+pro	NN	PDN
+with	IN	O
+retina	NN	PDN
+display	NN	O
+15	CD	PDN
+mjlq	NN	O
+2	CD	O
+
+moshi	FW	BN
+usb	FW	PDN
+30	CD	PDN
+to	TO	O
+gigabit	VB	PDN
+ethernet	NN	PDN
+adaptor	NN	PDN
+
+tucano	NN	BN
+156	CD	O
+agio	NN	O
+business	NN	PDN
+bag	NN	PDN
+for	IN	O
+notebooks	NN	O
+&	CC	O
+ultrabook	NN	O
+199	CD	O
+inch	NN	O
+
+tucano	IN	BN
+12	CD	O
+elements	NN	O
+second	JJ	O
+skin	NN	PDN
+case	NN	PDN
+in	IN	O
+neoprene	NN	O
+and	CC	O
+nylon	NN	O
+for	IN	O
+macbook	NN	O
+12	CD	O
+black	JJ	O
+gold	NN	O
+bfemb	NN	O
+12	CD	O
+
+tucano	NN	BN
+12	CD	O
+nido	NN	O
+hard	JJ	O
+shell	NN	PDN
+case	NN	PDN
+red	JJ	O
+for	IN	O
+macbook	NN	O
+12	CD	O
+transparent	JJ	O
+black	JJ	O
+&	CC	O
+gold	JJ	O
+hsnimb	NN	O
+12	CD	O
+
+jbl	FW	O
+xtreme	FW	O
+splashproof	JJ	O
+bluetooth	NN	PDN
+speaker	NN	PDN
+with	IN	O
+powerful	JJ	O
+sound	NN	O
+
+s	PRP	O
+by	IN	O
+resmed	JJ	O
+sleep	NN	PDN
+monitor	NN	PDN
+
+jbl	NN	O
+charge	NN	O
+2	CD	O
+splashproof	JJ	O
+portable	JJ	O
+bluetooth	NN	PDN
+speaker	NN	PDN
+with	IN	O
+usb	NN	O
+charger	NN	O
+
+tronsmart	FW	BN
+cc	FW	O
+2	CD	O
+tf	IN	O
+36	CD	O
+w	NN	O
+qualcomm	NN	O
+certified	VBD	O
+qc	JJ	O
+30	CD	O
+usb	NN	PDN
+2	CD	PDN
+port	NN	PDN
+car	NN	O
+charger	NN	O
+
+tronsmart	NN	BN
+w	VBD	O
+2	CD	O
+pte	NN	O
+qualcomm	NN	O
+certified	VBD	O
+qc	JJ	O
+30	CD	O
+usbc	NN	PDN
+&	CC	O
+usba	NN	PDN
+2	CD	PDN
+port	NN	PDN
+wall	NN	O
+charger	NN	O
+
+ipx	NN	BN
+8	CD	O
+iec	NN	O
+60529	CD	O
+phone	NN	O
+dome	NN	O
+water	NN	PDN
+resistant	NN	PDN
+skin	NN	PDN
+for	IN	O
+ipad	NN	O
+2	CD	O
+
+aukey	FW	BN
+bluetooth	FW	PDN
+headphone	FW	PDN
+v	FW	O
+41	CD	O
+magnet	NN	O
+wireless	JJ	O
+sports	NN	O
+headset	VBP	O
+inear	JJ	O
+sweatproof	JJ	O
+earphones	NN	O
+with	IN	O
+mic	NN	O
+
+aukey	NN	BN
+20	NN	O
+w	VBD	O
+dual	JJ	PDN
+usb	JJ	PDN
+port	JJ	PDN
+solar	JJ	PDN
+charger	NN	PDN
+for	IN	O
+smartphones	NN	O
+
+aukey	RB	BN
+12	CD	O
+w	JJ	O
+dual	JJ	PDN
+port	NN	PDN
+home	NN	PDN
+travel	NN	PDN
+usb	NN	PDN
+wall	NN	PDN
+charger	NN	PDN
+adapter	NN	PDN
+with	IN	O
+aipower	JJR	O
+adaptive	JJ	O
+charging	NN	O
+technology	NN	O
+&	CC	O
+foldable	JJ	O
+plug	NN	O
+whtie	NN	O
+
+anker	NN	BN
+24	CD	O
+w	NN	O
+dual	JJ	PDN
+usb	NN	PDN
+wall	NN	PDN
+charger	NN	PDN
+powerport	NN	O
+2	CD	O
+with	IN	O
+foldable	JJ	O
+plug	NN	O
+
+wahoo	FW	BN
+tickr	FW	PDN
+x	SYM	O
+heart	NN	PDN
+rate	NN	PDN
+monitor	NN	PDN
+
+wahoo	FW	BN
+tickr	FW	PDN
+hf	FW	O
+9	CD	O
+k	NN	O
+2	CD	O
+heart	NN	PDN
+rate	NN	PDN
+monitor	NN	PDN
+
+boombotix	FW	BN
+boombot	FW	PDN
+rex	FW	O
+10	CD	O
+2013	CD	O
+arctic	JJ	O
+white	NN	O
+
+activision	NN	BN
+skylanders	NN	O
+superchargers	VBZ	PDN
+starter	JJ	O
+pack	NN	O
+
+aukey	NN	BN
+car	NN	O
+mount	VBP	O
+aukey	RB	O
+reinforced	VBN	O
+magnetic	JJ	O
+cradleless	JJ	O
+car	NN	O
+air	NN	O
+vent	VBP	O
+mount	VB	O
+smartphone	JJ	PDN
+holder	NN	PDN
+cradle	NN	O
+hdc	NN	O
+5	CD	O
+black	NN	O
+
+disney	NN	BN
+infinity	NN	PDN
+30	CD	PDN
+edition	NN	O
+starter	JJ	O
+pack	NN	O
+hjep	NN	O
+2	CD	O
+vc	NN	O
+
+horipad	JJ	BN
+ultimate	JJ	O
+wireless	JJ	PDN
+game	NN	PDN
+controller	NN	PDN
+hj	VBD	O
+172	CD	O
+
+cocoon	NN	BN
+organizer	NN	BN
+gridit	JJ	PDN
+black	JJ	O
+cpg	NN	O
+5	CD	O
+bk	NN	O
+
+beats	NN	BN
+urbeats	VBZ	PDN
+inear	JJ	PDN
+headphones	NN	PDN
+white	JJ	O
+
+beats	NN	BN
+powerbeats	VBZ	PDN
+2	CD	PDN
+wireless	JJ	PDN
+inear	NN	PDN
+headphones	NN	PDN
+white	JJ	O
+
+beats	NN	BN
+tour	VBP	PDN
+high	JJ	PDN
+resolution	NN	PDN
+inear	NN	PDN
+headphones	NN	PDN
+black	JJ	O
+
+space	NN	O
+phantomxl	NN	BN
+16000	CD	O
+mah	NN	O
+power	NN	PDN
+bank	NN	PDN
+with	IN	O
+dual	JJ	PDN
+port	NN	PDN
+charger	NN	PDN
+
+amb	FW	O
+10000	FW	PDN
+mah	FW	PDN
+power	NN	PDN
+bank	NN	PDN
+metal	NN	O
+slab	NN	O
+silver	NN	O
+
+amb	FW	O
+13000	FW	PDN
+mah	FW	PDN
+power	NN	PDN
+bank	NN	PDN
+luxury	NN	O
+style	NN	O
+outdoor	JJ	O
+series	NN	O
+green	NN	O
+
+huawei	NN	BN
+honor	VBP	PDN
+5	CD	PDN
+c	NN	PDN
+
+huawei	NN	BN
+honor	VBP	PDN
+note	NN	PDN
+8	CD	PDN
+
+samsung	NN	BN
+gear	NN	PDN
+fit	VBD	PDN
+2	CD	PDN
+smartwatch	NN	PDN
+blue	NN	O
+
+oppo	NN	BN
+f	SYM	O
+1	CD	O
+s	VBZ	O
+selfie	NN	PDN
+expert	NN	PDN
+
+samsung	VBG	BN
+galaxy	JJ	PDN
+note	NN	PDN
+7	CD	PDN
+with	IN	O
+warranty	NN	O
+
+oppo	IN	BN
+a	DT	PDN
+37	CD	PDN
+
+samsung	VBG	BN
+galaxy	JJ	PDN
+note	NN	PDN
+7	CD	PDN
+without	IN	O
+warranty	NN	O
+
+samsung	FW	BN
+galaxy	FW	PDN
+j	FW	PDN
+3	CD	PDN
+pro	NN	PDN
+2016	CD	PDN
+with	IN	O
+warranty	NN	O
+
+z SYM O
+50 CD O
+bluetoothsim NN PDN
+smartwatch NN PDN
+gprs VBZ O
+androidios NN O
+connectivity NN O
+with IN O
+4 CD O
+gb NN O
+card NN O
+
+sony	FW	BN
+xperia	FW	PDN
+e	SYM	PDN
+5	CD	PDN
+
+huawei	FW	BN
+y	FW	PDN
+3	CD	PDN
+ii	NN	PDN
+
+oneplus	NN	PDN
+3	CD	PDN
+
+samsung	FW	BN
+galaxy	FW	PDN
+j	FW	PDN
+7	CD	PDN
+2016	CD	PDN
+dual	JJ	PDN
+sim	NN	PDN
+
+htc	NN	PDN
+10	CD	PDN
+
+nillkin	JJ	BN
+super	JJ	O
+frosted	JJ	O
+premium	NN	O
+back	RB	PDN
+cover	VB	PDN
+for	IN	O
+galaxy	NN	O
+s	VBZ	O
+7	CD	O
+
+huawei	NN	BN
+p	VBP	PDN
+9	CD	PDN
+eval	JJ	PDN
+09	CD	PDN
+
+lenovo	FW	BN
+zuk	FW	PDN
+z	SYM	PDN
+1	CD	PDN
+
+microsoft	FW	BN
+lumia	FW	PDN
+950	CD	PDN
+
+microsoft	FW	BN
+lumia	FW	PDN
+450	CD	PDN
+xl	NN	PDN
+
+sony	FW	BN
+xperia	FW	PDN
+z	SYM	PDN
+5	CD PDN
+dual	JJ	PDN
+
+huawei	NN	BN
+y	VBP	PDN
+635	CD	PDN
+
+blackberry	JJ	BN
+torch	NN	PDN
+9800	CD	PDN
+black	NN	O
+
+lg	NN	BN
+k	NN	PDN
+5	CD	PDN
+
+blackberry	JJ	BN
+bold	JJ	PDN
+3	CD	PDN
+9780	CD	PDN
+black	NN	O
+
+lg	FW	BN
+g	FW	PDN
+flex	FW	PDN
+2	CD	PDN
+
+nokia	RB	BN
+225	CD	PDN
+dual	JJ	PDN
+sim	NN	PDN
+
+nokia	NN	BN
+2730	CD	PDN
+classic	NN	PDN
+
+qmobile	NN	BN
+h	VBD	PDN
+75	CD	PDN
+
+qmobile	NN	BN
+e	SYM	PDN
+440	CD	PDN
+i	FW	PDN
+
+gfive	NN	BN
+x	SYM	PDN
+hero	NN	PDN
+3	CD	PDN
+
+gfive	JJ	BN
+smart	JJ	PDN
+5	CD	PDN
+
+gfive	JJ	BN
+president	NN	PDN
+smart	JJ	PDN
+1	CD	PDN
+
+mmobile	FW	BN
+p	FW	PDN
+15	CD	PDN
+i	FW	PDN
+splendor	FW	PDN
+
+mmobile	NN	BN
+x	SYM	PDN
+770	FW	PDN
+n	FW	PDN
+
+haier	JJR	BN
+mobile	JJ	BN
+esteem	NN	PDN
+v	VBD	PDN
+40	CD	PDN
+
+rivo	FW	BN
+neo	FW	PDN
+n	FW	PDN
+330	CD	PDN
+
+rivo	NN	BN
+sapphire	NN	PDN
+s	VBZ	PDN
+625	CD	PDN
+
+galaxy	JJ	PDN
+tab	NN	PDN
+s	VBZ	PDN
+2	CD	PDN
+80	CD	PDN
+4	CD	O
+glte	NN	O
+without	IN	O
+warranty	NN	O
+
+galaxy	JJ	PDN
+tab	NN	PDN
+s	VBZ	PDN
+2	CD	PDN
+97	CD	PDN
+4	CD	O
+glte	NN	O
+without	IN	O
+warranty	NN	O
+
+amazon	NN	BN
+kindle	NN	PDN
+fire	NN	PDN
+hdx	VBD	PDN
+89	CD	PDN
+wifi	NN	PDN
+and	CC	PDN
+4	CD	PDN
+g	NN	PDN
+lte	VBD	PDN
+64	CD	PDN
+gb	NN	PDN
+includes	VBZ	O
+special	JJ	O
+offers	NN	O
+
+hp	NN	BN
+slatebook	NN	PDN
+x	SYM	PDN
+2	CD	PDN
+
+microsoft	NN	BN
+surface	NN	PDN
+pro	NN	PDN
+4	CD	PDN
+core	NN	PDN
+i	FW	O
+5	CD	O
+
+dell	FW	BN
+venue	FW	PDN
+10	CD	PDN
+pro	JJ	PDN
+5055	CD	PDN
+5000	CD	PDN
+series	NN	PDN
+64	CD	PDN
+gb	NN	PDN
+
+amazon	FW	BN
+kindle	FW	PDN
+fire	NN	PDN
+voyage	NN	PDN
+6	CD	PDN
+3	CD	PDN
+g	NN	PDN
+wifi	NN	PDN
+includes	VBZ	O
+special	JJ	O
+offers	NN	O
+
+qmobile	JJ	BN
+tab	NN	PDN
+x	SYM	PDN
+50	CD	PDN
+
+asus	IN	BN
+64	CD	PDN
+gb	NN	PDN
+transformer	NN	PDN
+pad	NN	PDN
+infinity	NN	PDN
+tf	VBD	O
+700	CD	O
+101	CD	O
+
+barnes	NN	BN
+&	CC	BN
+noble	JJ	PDN
+nook	NN	PDN
+hd	VBD	PDN
+7	CD	PDN
+
+z	SYM	BN
+50	CD	BN
+smart	JJ	PDN
+watch	NN	PDN
+smartphone	NN	PDN
+connectible	JJ	PDN
+with	IN	O
+simcard	JJ	O
+slot	NN	O
+and	CC	O
+bluetooth	JJ	O
+support	NN	O
+grey	NN	O
+
+huawei	JJ	BN
+band	NN	PDN
+b	NN	PDN
+0	CD	PDN
+
+asus	NN	BN
+zenwatch	VBP	PDN
+2	CD	PDN
+android	JJ	O
+wear	NN	O
+smartwatch	NN	O
+145	CD	O
+silver	NN	O
+case	NN	O
+with	IN	O
+silver	JJ	O
+metal	NN	O
+band	NN	O
+
+yunteng	NN	BN
+yt	VBD	PDN
+188	CD	PDN
+extendable	JJ	O
+handheld	JJ	O
+selfie	NN	O
+stick	NN	O
+
+plantronics	NN	BN
+k	NN	PDN
+100	CD	PDN
+latest	JJS	PDN
+
+step	NN	PDN
+up	IN	PDN
+4	CD	PDN
+miami	NN	PDN
+heat	NN	PDN
+2012	CD	PDN
+bluray	NN	BN
+3	CD	O
+d	SYM	O
+
+the	DT	PDN
+wizard	NN	PDN
+of	IN	PDN
+oz	FW	PDN
+bluray	FW	BN
+hd	FW	O
+
+ted	VBD	PDN
+2012	CD	PDN
+bluray	NN	BN
+hd	NN	O
+
+looper	FW	PDN
+bluray	FW BN
+hd	FW O
+
+gi	NN PDN
+joe	VBP	PDN
+the	DT	PDN
+rise	NN	PDN
+of	IN	PDN
+cobra	FW	PDN
+bluray	FW	BN
+hd	FW	O
+
+hotel	NN	PDN
+transylvania	NN	PDN
+2012	CD	PDN
+bluray	NN	BN
+3	CD	O
+d	SYM	O
+
+a	DT	PDN
+very	JJ	PDN
+harold	NN	PDN
+and	CC	PDN
+kumar	NN	PDN
+3	CD	PDN
+d	SYM	PDN
+christmas	VBZ	PDN
+2011	CD	PDN
+bluray	NN	BN
+3	CD	O
+d	SYM	O
+
+one	CD	PDN
+two	CD	PDN
+three	CD	PDN
+2008	CD	PDN
+dvd	NN	PDN
+
+onkyo	JJ	BN
+home	NN	PDN
+theater	NN	PDN
+hts	VBZ	PDN
+5500	CD	PDN
+
+samsung	FW	BN
+bluray	FW	PDN
+home	NN	PDN
+theater	NN	PDN
+set	VBN	O
+htj	FW	O
+5550	FW	O
+wk	FW	O
+
+mission	NN	BN
+mv	VBD	PDN
+5	CD	PDN
+cinema	NN	PDN
+pack	NN	PDN
+home	NN	PDN
+theater	NN	PDN
+
+videocon	NN	BN
+d	SYM	PDN
+2	CD	PDN
+h	JJ	PDN
+digital	JJ	PDN
+tv	NN	O
+hd	NN	O
+
+asus	IN	BN
+z	SYM	PDN
+170	CD	PDN
+deluxe	JJ	PDN
+atx	NN	PDN
+motherboard	NN	PDN
+
+asus	JJ	BN
+republic	NN	PDN
+of	IN	PDN
+gamers	NN	PDN
+maximus	FW	PDN
+viii	FW	PDN
+impact	NN	PDN
+miniitx	NN	PDN
+motherboard	NN	PDN
+
+asus	IN	BN
+156	CD	PDN
+republic	NN	PDN
+of	IN	PDN
+gamers	NN	PDN
+gl	VBP	PDN
+552	CD	PDN
+vw	FW	PDN
+fi	FW	PDN
+485	CD	PDN
+t	NN	PDN
+
+alienware	RB	BN
+alw	IN	PDN
+175312	CD	PDN
+slv	NN	PDN
+
+sager	NN	BN
+np	NN	PDN
+8678	NN	PDN
+s	VBZ	PDN
+
+sager	NN	BN
+hj	NN	PDN
+8888	NN	PDN
+
+sager	NN	BN
+ng	NN	PDN
+8965	NN	PDN
+h	VBZ	PDN
+
+amd	FW	BN
+firepro	FW	PDN
+w	FW	PDN
+7100	CD	PDN
+professional	JJ	PDN
+graphics	NN	O
+card	NN	O
+100505975	CD	O
+
+amd	FW	BN
+firepro	FW	PDN
+o	FW	PDN
+8965	CD	PDN
+workstation	JJ	PDN
+graphics	NN	O
+card	NN	O
+2354268	CD	O
+
+powercolor	NN	BN
+axr	IN	PDN
+9	CD	PDN
+290	CD	PDN
+4	CD	PDN
+gbd	NN	PDN
+5	CD	PDN
+tdheoc	NN	PDN
+
+a	DT	BN
+4	CD	BN
+tech	FW	BN
+pk	FW	PDN
+920	FW	O
+h	FW	O
+
+a	DT	BN
+4	CD	BN
+tech	FW	BN
+webcam	FW	PDN
+pk	FW	PDN
+30	CD	O
+f	SYM	O
+
+asus	IN	BN
+z	SYM	PDN
+170	CD	PDN
+deluxe	JJ	PDN
+atx	NN	PDN
+motherboard	NN	PDN
+
+toshiba	NN	BN
+canvio	NN	PDN
+connect	VB	PDN
+30	CD	PDN
+portable	JJ	PDN
+hard	JJ	PDN
+drive	NN	PDN
+2	CD	O
+tb	NN	O
+satin	NN	O
+silver	NN	O
+
+genius	NN	BN
+gb	VBD	PDN
+1501	CD	O
+fits	NN	O
+up	IN	O
+to	TO	O
+14156	CD	O
+inch	NN	O
+laptop	NN	PDN
+bags	NN	PDN
+
+targus	IN	BN
+156	CD	PDN
+spruce	VBP	PDN
+ecosmart	NN	PDN
+backpack	NN	PDN
+
+targus	IN	BN
+154	CD	PDN
+hughes	NN	PDN
+ladies	NN	PDN
+tote	VBP	PDN
+
+belkin	NN	BN
+cushdesk	NN	PDN
+pitch	VBP	PDN
+blacksoft	RB	PDN
+gray	JJ	O
+
+battery	NN	PDN
+for	IN	O
+dell	FW	BN
+xps	FW	O
+m	FW	O
+1530	CD	O
+
+razer	RBR	BN
+leviathan	JJ	PDN
+51	CD	PDN
+channel	NN	O
+surround	VBP	O
+sound	JJ	O
+speakers	NN	O

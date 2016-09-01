@@ -180,6 +180,7 @@
     <Compile Include="Handle\HTMLParser.cs" />
     <Compile Include="Model\Accuracy.cs" />
     <Compile Include="Model\Category.cs" />
+    <Compile Include="Model\Config.cs" />
     <Compile Include="Model\ProductPricing.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\Word.cs" />
