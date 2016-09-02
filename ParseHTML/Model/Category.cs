@@ -13,6 +13,10 @@ class Category
     {
         this.lsBC = lsBC;
     }
+    /// <summary>
+    /// Syn data with sql server
+    /// </summary>
+    /// <param name="cnn"></param>
     public void synWithConnnection(SqlConnection cnn)
     {
         if (lsBC.Count<2)
@@ -63,6 +67,10 @@ class Category
             i++;
         }
     }
+    /// <summary>
+    /// Syn data with sql server
+    /// </summary>
+    /// <param name="cnn"></param>
     public void synWithConnnectionWithProduct(SqlConnection cnn, int productId)
     {
         if (parentCatId == null)

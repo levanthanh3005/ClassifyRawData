@@ -15,6 +15,11 @@ public class CRFProcess
     {
         // crf_test -m model testdata.dat
     }
+    /// <summary>
+    /// This function will set lable for product fullname, after that, brand name and product name will be detected
+    /// </summary>
+    /// <param name="product"></param>
+    /// <returns></returns>
     public Product doProcess(Product product)
     {
         List<Word> lsW = setPosTag(product.getFullName());
@@ -101,15 +106,12 @@ public class CRFProcess
     /// <returns></returns>
     public List<Word> setPosTag(String text)
     {
-        //text = "apple imac retina 5k 27 mf886 price in pakistan";
         String[] lst= Regex.Split(text, "([0-9]+)");
         text = "";
         foreach(String s in lst)
         {
             text = text + s + " ";
         }
-        //string alphaPart = result.Groups[1].Value;
-        //string numberPart = result.Groups[2].Value;
 
         List<Word> lsW = new List<Word>();
         var jarRoot = @"..\..\CRF\stanford-postagger-full-2015-12-09";
@@ -117,12 +119,6 @@ public class CRFProcess
 
         // Loading POS Tagger
         var tagger = new MaxentTagger(modelsDirectory + @"\wsj-0-18-bidirectional-nodistsim.tagger");
-
-        // Text for tagging
-        //text = "A Part-Of-Speech Tagger (POS Tagger) is a piece of software that reads text"
-        //           + "in some language and assigns parts of speech to each word (and other token),"
-        //           + " such as noun, verb, adjective, etc., although generally computational "
-        //           + "applications use more fine-grained POS tags like 'noun-plural'.";
 
         var sentences = MaxentTagger.tokenizeText(new java.io.StringReader(text)).toArray();
         foreach (ArrayList sentence in sentences)
@@ -142,6 +138,10 @@ public class CRFProcess
         //Console.ReadLine();
         return lsW;
     }
+    /// <summary>
+    /// Write file into CRF/testdata.dat as the input for CRF++
+    /// </summary>
+    /// <param name="lsW"></param>
     public void writeFile(List<Word> lsW)
     {
         Console.WriteLine("Start Writefile for CRF");

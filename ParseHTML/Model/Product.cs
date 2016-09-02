@@ -259,6 +259,10 @@ public class Product
     {
         setUid(Guid.NewGuid().ToString());
     }
+    /// <summary>
+    /// Syn data with sql server
+    /// </summary>
+    /// <param name="cnn"></param>
     public void synWithConnnection(SqlConnection cnn)
     {
         try

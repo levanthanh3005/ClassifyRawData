@@ -9,6 +9,10 @@ namespace ParseHTML
 {
     class Program
     {
+        /// <summary>
+        /// Main of the entire of project
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             // Console.WriteLine("apple iphone 6 128gb silver".("apple iphone 6 128gb silver 1901422"));

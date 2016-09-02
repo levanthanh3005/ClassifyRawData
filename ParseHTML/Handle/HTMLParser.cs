@@ -34,10 +34,21 @@ class HTMLParser
         this.urlId = urlId;
         this.htmlValue = htmlValue;
     }
+    /// <summary>
+    /// The function will remove all characters thats not number or alphabet characters
+    /// </summary>
+    /// <param name="text"></param>
+    /// <returns></returns>
     private String normalize(String text)
     {
         return Regex.Replace(text, "[^0-9a-zA-Z]+", "").ToLower();
     }
+    /// <summary>
+    /// This function will compare 2 strings, for example, 11 and 111, result is 2/3 = 60%
+    /// </summary>
+    /// <param name="a"></param>
+    /// <param name="b"></param>
+    /// <returns></returns>
     private double StringCompare(string a, string b)
     {
         if (a == b) //Same string, no iteration needed.
@@ -58,6 +69,9 @@ class HTMLParser
         }
         return sameCharAtIndex / maxLen * 100;
     }
+    /// <summary>
+    /// HTML Parser process, after that, image url, product's price, breadcrumb, keyword, product title will be detected
+    /// </summary>
     public void doProcess()
     {
         try
@@ -201,6 +215,10 @@ class HTMLParser
             Console.WriteLine("Error:" + e.ToString());
         }
     }
+    /// <summary>
+    /// this function will find image links in node
+    /// </summary>
+    /// <param name="node"></param>
     public void findImage(HtmlNode node)
     {
         //Console.WriteLine("start to find image");
@@ -248,6 +266,11 @@ class HTMLParser
             findImage(node.ParentNode);
         }
     }
+    /// <summary>
+    /// This funcition will return the list of breadcrumb in bcNode (BreadCrumb Node)
+    /// </summary>
+    /// <param name="bcNode"></param>
+    /// <returns></returns>
     public List<String> seperateBreadcrumb(HtmlNode bcNode)
     {
         Console.WriteLine("seperateBreadcrumb");
@@ -284,6 +307,10 @@ class HTMLParser
         //Console.ReadLine();
         return lsBC;
     }
+    /// <summary>
+    /// This function will find the price in prNode (Node contain price)
+    /// </summary>
+    /// <param name="prNode"></param>
     public void findPrice(HtmlNode prNode)
     {
         if (prNode==null)
@@ -351,6 +378,13 @@ class HTMLParser
         productPricing.setCurrency(currency);
         Console.WriteLine("Done in HTMLPaser");
     }
+    /// <summary>
+    /// This function will find node containing text from node to limitNode, limitNode contains node
+    /// </summary>
+    /// <param name="node"></param>
+    /// <param name="limitNode"></param>
+    /// <param name="text"></param>
+    /// <returns></returns>
     public Boolean findFromNode(HtmlNode node, HtmlNode limitNode, String text)
     {
         while(node.OuterHtml!=limitNode.OuterHtml && !node.OuterHtml.ToLower().Contains(text))
@@ -363,6 +397,12 @@ class HTMLParser
         }
         return false;
     }
+    /// <summary>
+    /// This function will find the smallest node that contain text with status conditions from node to its childrens
+    /// </summary>
+    /// <param name="node"></param>
+    /// <param name="text"></param>
+    /// <param name="status"></param>
     public void findNode(HtmlNode node, String text, int status)
     {
         //status = 0 : find title
@@ -488,6 +528,10 @@ class HTMLParser
             findNode(nodeS, text, status);
         }
     }
+    /// <summary>
+    /// This function will find the node containing price information
+    /// </summary>
+    /// <param name="node"></param>
     public void findNodeContainPrice(HtmlNode node)
     {
         if (node.ParentNode.Name == "body")
@@ -509,6 +553,12 @@ class HTMLParser
             findNodeContainPrice(node.ParentNode);
         }
     }
+    /// <summary>
+    /// This function will compute the diff between s and t, for example, 123 and 124, the result is 1 
+    /// </summary>
+    /// <param name="s"></param>
+    /// <param name="t"></param>
+    /// <returns></returns>
     public int Compute(string s, string t)
     {
         if (string.IsNullOrEmpty(s))

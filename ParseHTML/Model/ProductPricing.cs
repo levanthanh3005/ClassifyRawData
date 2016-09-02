@@ -115,6 +115,10 @@ public class ProductPricing
         DateTime myDateTime = DateTime.Now;
         return myDateTime.ToString("yyyy-MM-dd HH:mm:ss.fff");
     }
+    /// <summary>
+    /// Syn data with sql server
+    /// </summary>
+    /// <param name="cnn"></param>
     public void synWithConnnection(SqlConnection cnn)
     {
         try
