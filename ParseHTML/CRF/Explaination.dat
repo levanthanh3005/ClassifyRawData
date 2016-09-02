@@ -1,0 +1,48 @@
+1_Some definitions:
+	PDN: product's name, 
+	PDT: product's type, 
+	BN: brand's name, 
+	O: outside	
+  About PosTag, this is the list of tag, you can see:
+  https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html
+2_More detail in process to labeling
+	Start with the tilte of product:
+		getiit joy smart wrist bsnd black
+	We can have a list of word, and use setPosTag to the list:
+		getiit NN
+		joy NN
+		smart JJ
+		wrist NN
+		bsnd NN
+		black NN
+	The list will be saved in testdata.dat as the input for CRF++
+	And then CRF++ will label the list in testdata.dat, you can do
+it by yourself by the way: go to cmd in the folder, and type:
+	crf_test -m model testdata.dat
+	The result will be shown in console
+	
+3_To train more data
+	model file can be created when you train your data, and you can
+use the file to detect label of word
+	To create model file, you have to add more data in train.dat, for 
+example, you add the list in the end of train.dat:
+		getiit	NN	BN
+		joy	NN	BN
+		smart	JJ	PDN
+		wrist	NN	PDN
+		bsnd	NN	PDN
+		black	NN	O
+	The list should be separated with other by space like this:
+		...
+		sound	JJ	O
+		speakers	NN	O
+		
+		getiit	NN	BN
+		joy	NN	BN
+		smart	JJ	PDN
+		wrist	NN	PDN
+		bsnd	NN	PDN
+		black	NN	O
+	And train data by command:
+		crf_learn template train.dat model
+	And then, you can use the model to test data as the step 2

@@ -53,6 +53,12 @@ public class CRFProcess
         product.setBrand(brand);
         return product;
     }
+    /// <summary>
+    /// Using CRF tool to set lable for each Word in lsW, this is the list of lable:
+    /// PDN: product's name, PDT: product's type, BN: brand's name, O: outside
+    /// </summary>
+    /// <param name="lsW"></param>
+    /// <returns></returns>
     public List<Word> setCRFTag(List<Word> lsW)
     {
         string output = string.Empty;
@@ -88,6 +94,11 @@ public class CRFProcess
         Console.WriteLine("Done CRF");
         return lsW;
     }
+    /// <summary>
+    /// Using Parts of speech tool to detect the word form, more information in http://parts-of-speech.info/, and you can see in CRF/Explaination.dat
+    /// </summary>
+    /// <param name="text"></param>
+    /// <returns></returns>
     public List<Word> setPosTag(String text)
     {
         //text = "apple imac retina 5k 27 mf886 price in pakistan";
