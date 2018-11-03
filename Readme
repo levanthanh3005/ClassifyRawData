@@ -1,13 +1,9 @@
-Hi,
+This project will crawl data from a website and classify the data to brand name, product name ..... by CRF++
+Written in Visualstudio C 2016
 My application is based on console
-if you wanna have UI, can you tell me soon
 To config the connection, please edit ParseHTML\ConnectionConfig.dat
 with following instructions:
 LEVANTHANH-PC ===> this is the data source
 ProManagement ===> this is the database name
 root		  ===> this is the user name
 12345678 	  ===> this is the password
-
-Can you change it to be suitable with you environment
-If you have any issues, lets me know soon
-Thanks
